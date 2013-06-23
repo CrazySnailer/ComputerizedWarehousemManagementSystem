@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-8 23:00:05 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="bean.Deliver" table="deliver" catalog="goodsmanger">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="deliverId" type="string">
+            <column name="deliverId" length="45" not-null="true" />
+        </property>
+        <property name="createBy" type="string">
+            <column name="createBy" length="45" not-null="true" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="45" not-null="true" />
+        </property>
+        <property name="deliverDate" type="timestamp">
+            <column name="deliverDate" length="19" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="20" not-null="true" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="200" />
+        </property>
+        <set name="goodsdelivers" table="goodsdeliver" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Did" not-null="true" />
+            </key>
+            <one-to-many class="bean.Goodsdeliver" />
+        </set>
+    </class>
+</hibernate-mapping>

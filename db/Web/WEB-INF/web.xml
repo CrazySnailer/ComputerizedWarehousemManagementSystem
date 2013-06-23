@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>addVendor</display-name>
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+	</welcome-file-list>
+	
+	<!-- 字符编码过滤器 -->
+    <filter>
+        <filter-name>CharsetEncodingFilter</filter-name>
+        <filter-class>com.coe.filters.CharsetAllEncodingFilter</filter-class>
+        <init-param>
+              <param-name>encoding</param-name>
+              <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharsetEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+	
+	<!-- 自定义针对各个目录访问能力的过滤器 -->
+	<filter>
+		<filter-name>SmFilter</filter-name>
+		<filter-class>com.coe.filters.SmFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SmFilter</filter-name>
+		<url-pattern>/sm/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>SqFilter</filter-name>
+		<filter-class>com.coe.filters.SqFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SqFilter</filter-name>
+		<url-pattern>/sq/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>BimFilter</filter-name>
+		<filter-class>com.coe.filters.BimFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>BimFilter</filter-name>
+		<url-pattern>/bim/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>UmFilter</filter-name>
+		<filter-class>com.coe.filters.UmFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>UmFilter</filter-name>
+		<url-pattern>/um/*</url-pattern>
+	</filter-mapping>	
+	
+	
+	<filter>
+		<filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+
+     <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+   
+	
+</web-app>

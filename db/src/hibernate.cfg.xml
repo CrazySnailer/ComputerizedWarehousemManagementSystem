@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="HibernateSessionFactory">
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">learning</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/goodsmanger</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <mapping resource="bean/Category.hbm.xml" />
+        <mapping resource="bean/Customer.hbm.xml" />
+        <mapping resource="bean/Goodsstockin.hbm.xml" />
+        <mapping resource="bean/Goods.hbm.xml" />
+        <mapping resource="bean/Resources.hbm.xml" />
+        <mapping resource="bean/Stockout.hbm.xml" />
+        <mapping resource="bean/Goodscheck.hbm.xml" />
+        <mapping resource="bean/Deliver.hbm.xml" />
+        <mapping resource="bean/Vendor.hbm.xml" />
+        <mapping resource="bean/Goodsstockout.hbm.xml" />
+        <mapping resource="bean/Shelf.hbm.xml" />
+        <mapping resource="bean/Goodsdeliver.hbm.xml" />
+        <mapping resource="bean/Department.hbm.xml" />
+        <mapping resource="bean/Stockin.hbm.xml" />
+        <mapping resource="bean/Check.hbm.xml" />
+        <mapping resource="bean/Users.hbm.xml" />
+        <mapping resource="bean/Brand.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

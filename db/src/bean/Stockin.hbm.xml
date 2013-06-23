@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-8 23:00:05 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="bean.Stockin" table="stockin" catalog="goodsmanger">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="stockInId" type="string">
+            <column name="stockInId" length="20" not-null="true" />
+        </property>
+        <property name="stockInDate" type="timestamp">
+            <column name="stockInDate" length="19" not-null="true" />
+        </property>
+        <property name="stockInType" type="string">
+            <column name="stockInType" length="45" not-null="true" />
+        </property>
+        <property name="batchNo" type="string">
+            <column name="batchNo" length="45" not-null="true" />
+        </property>
+        <property name="createBy" type="string">
+            <column name="createBy" length="45" not-null="true" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="createTime" length="19" not-null="true" />
+        </property>
+        <property name="vendor" type="string">
+            <column name="vendor" length="45" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" not-null="true" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="200" />
+        </property>
+        <set name="goodsstockins" table="goodsstockin" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SId" not-null="true" />
+            </key>
+            <one-to-many class="bean.Goodsstockin" />
+        </set>
+    </class>
+</hibernate-mapping>

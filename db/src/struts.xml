@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="myPackage" extends="struts-default">
+		<action name="loginAction" class="action.LoginAction">
+			<result name="success">common/mainpage.html</result>
+			<result name="input">/index.jsp</result>
+		</action>
+	</package>
+	<package name="stockManager" extends="struts-default">
+		<action name="stockin" class="action.StockInAction">
+			<result name="success">successStock.jsp</result>
+			<result name="input">stockIn.jsp</result>
+		</action>
+		<action name="goodsStockin" class="action.StockQtyAction">
+			<result name="success">getQty.jsp</result>
+			<result name="sumQty">getQty.jsp</result>
+		</action>
+		<action name="stockout" class="action.StockOutAction">
+			<result name="success">successStock.jsp</result>
+			<result name="allFind">allStockout.jsp</result>
+			<result name="customer">/sq/showCustomer.jsp</result>
+			<result name="input">stockOut.jsp</result>
+		</action>
+		<action name="deliverAction" class="action.DeliverAction">
+			<result name="success">successStock.jsp</result>
+			<result name="input">deliver.jsp</result>
+		</action>
+		<action name="checkAction" class="action.CheckAction">
+			<result name="success">successStock.jsp</result>
+			<result name="input">check.jsp</result>
+		</action>
+	</package>
+	<package name="query" extends="struts-default">
+		<action name="stockinQuery" class="action.StockInQueryAction">
+			<result name="success">stockInQuery.jsp</result>
+		</action>
+		<action name="stockoutQuery" class="action.StockOutQueryAction">
+			<result name="success">stockOutQuery.jsp</result>
+		</action>
+		<action name="deliverQuery" class="action.DeliverQueryAction">
+			<result name="success">deliverQuery.jsp</result>
+		</action>
+		<action name="checkQuery" class="action.CheckQueryAction">
+			<result name="success">checkQuery.jsp</result>
+		</action>
+		<action name="stockAction" class="action.StockAction">
+			<result name="success">stockQuery.jsp</result>
+		</action>
+	</package>
+	<package name="systemManager" extends="struts-default">
+		<action name="addCategory" class="action.AddCategoryAction">
+			<result name="success">addCategory.jsp</result>
+			<result name="input">addCategory.jsp</result>
+		</action>
+		<action name="findCategory" class="action.FindCategoryAction">
+			<result name="success">categoryManagement.jsp</result>
+			<result name="update">updateCategory.jsp</result>
+			<result name="findAll">allCategory.jsp</result>
+		</action>
+		<action name="updateCategory" class="action.UpdateCategoryAction">
+			<result name="success">updateCategory.jsp</result>
+			<result name="update">updateCategory.jsp</result>
+		</action>
+		<action name="deleteCategory" class="action.DeleteCategoryAction">
+			<result name="success">successDelete.jsp</result>
+			<result name="update">categoryManagement.jsp</result>
+		</action>
+		<action name="brandAction" class="action.BrandAction">
+			<result name="add">addBrand.jsp</result>
+			<result name="find">brandManagement.jsp</result>
+			<result name="update">updateBrand.jsp</result>
+			<result name="delete">successDelete.jsp</result>
+			<result name="allBrand">allBrand.jsp</result>
+			<result name="success">updateBrand.jsp</result>
+		</action>
+		<action name="productAction" class="action.ProductAction">
+			<result name="add">addProduct.jsp</result>
+			<result name="find">productManagement.jsp</result>
+			<result name="update">updateProduct.jsp</result>
+			<result name="delete">successDelete.jsp</result>
+			<result name="success">updateProduct.jsp</result>
+			<result name="show">productDetail.jsp</result>
+			<result name="allFind">/sm/allProduct.jsp</result>
+			<result name="allFind1">/sm/allProduct1.jsp</result>
+		</action>
+		<action name="vendorAction" class="action.VendorAction">
+			<result name="add">addVendor.jsp</result>
+			<result name="find">vendorManagement.jsp</result>
+			<result name="update">updateVendor.jsp</result>
+			<result name="show">updateVendor.jsp</result>
+			<result name="delete">successDelete.jsp</result>
+			<result name="allFind">/sm/selectVendor.jsp</result>
+		</action>
+		<action name="customerAction" class="action.CustomerAction">
+			<result name="add">addCustomer.jsp</result>
+			<result name="find">customerManagement.jsp</result>
+			<result name="update">updateCustomer.jsp</result>
+			<result name="show">updateCustomer.jsp</result>
+			<result name="delete">successDelete.jsp</result>
+			<result name="allFind">/sm/allCustomer.jsp</result>
+			<result name="allFind1">/sm/allCity.jsp</result>
+		</action>
+		<action name="shelfAction" class="action.ShelfAction">
+			<result name="add">addShelf.jsp</result>
+			<result name="find">shelfManagement.jsp</result>
+			<result name="update">updateShelf.jsp</result>
+			<result name="show">updateShelf.jsp</result>
+			<result name="delete">successDelete.jsp</result>
+			<result name="allFind">allShelf.jsp</result>
+			<result name="allFind1">/sm/allShelf1.jsp</result>
+		</action>
+	</package>
+	<package name="userManager" extends="struts-default">
+		<action name="usersAction" class="action.UsersAction">
+			<result name="add">addUsers.jsp</result>
+			<result name="find">usersManagement.jsp</result>
+			<result name="update">updateUsers.jsp</result>
+			<result name="show">usersDetail.jsp</result>
+			<result name="delete">/bim/successDelete.jsp</result>	
+		</action>
+		<action name="usersGrants" class="action.UserGrantsAction">
+			<result name="success">grantsManagement.jsp</result>
+		</action>
+		<action name="resourcesAction" class="action.ResourceAction">
+			<result name="add">addResource.jsp</result>
+			<result name="find">resourceManagement.jsp</result>
+			<result name="update">updateResource.jsp</result>
+			<result name="show">updateResource.jsp</result>
+			<result name="delete">/bim/successDelete.jsp</result>
+		</action>
+		<action name="departmentAction" class="action.DepartmentAction">
+			<result name="add">addDepartment.jsp</result>
+			<result name="find">departmentManagement.jsp</result>
+			<result name="update">updateDepartment.jsp</result>
+			<result name="show">updateDepartment.jsp</result>
+			<result name="delete">/bim/successDelete.jsp</result>
+			<result name="allFind"></result>
+			<result name="allFind1">allDepartment.jsp</result>
+		</action>
+	</package>
+</struts>

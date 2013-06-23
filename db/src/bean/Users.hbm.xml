@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-8 23:00:05 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="bean.Users" table="users" catalog="goodsmanger">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="45" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" not-null="true" />
+        </property>
+        <property name="utype" type="string">
+            <column name="utype" length="45" not-null="true" />
+        </property>
+        <property name="deptName" type="string">
+            <column name="deptName" length="45" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="createTime" length="19" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="20" not-null="true" />
+        </property>
+        <property name="grantsManage" type="string">
+            <column name="grantsManage" length="45" />
+        </property>
+        <property name="lastLoginTime" type="timestamp">
+            <column name="lastLoginTime" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

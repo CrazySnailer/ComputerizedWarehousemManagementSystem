@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-8 23:00:05 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="bean.Goods" table="goods" catalog="goodsmanger">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="productName" type="string">
+            <column name="productName" length="45" not-null="true" />
+        </property>
+        <property name="barcode" type="string">
+            <column name="barcode" length="45" not-null="true" />
+        </property>
+        <property name="category" type="string">
+            <column name="category" length="45" not-null="true" />
+        </property>
+        <property name="brand" type="string">
+            <column name="brand" length="45" not-null="true" />
+        </property>
+        <property name="specification" type="string">
+            <column name="specification" length="45" />
+        </property>
+        <property name="threshold" type="string">
+            <column name="threshold" length="45" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="200" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="createTime" length="19" />
+        </property>
+        <property name="status" type="int">
+            <column name="status" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

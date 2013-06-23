@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-6-8 23:00:05 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="bean.Stockout" table="stockout" catalog="goodsmanger">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="stockOutId" type="string">
+            <column name="stockOutId" length="45" not-null="true" />
+        </property>
+        <property name="stockOutType" type="string">
+            <column name="stockOutType" length="45" not-null="true" />
+        </property>
+        <property name="createBy" type="string">
+            <column name="createBy" length="45" not-null="true" />
+        </property>
+        <property name="customer" type="string">
+            <column name="customer" length="45" not-null="true" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="createTime" length="19" not-null="true" />
+        </property>
+        <property name="stockOutDate" type="timestamp">
+            <column name="stockOutDate" length="19" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="20" not-null="true" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="200" />
+        </property>
+        <set name="goodsstockouts" table="goodsstockout" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SOd" not-null="true" />
+            </key>
+            <one-to-many class="bean.Goodsstockout" />
+        </set>
+    </class>
+</hibernate-mapping>

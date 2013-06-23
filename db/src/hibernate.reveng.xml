@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="goodsmanger" match-name="brand"/>
+  <table-filter match-catalog="goodsmanger" match-name="category"/>
+  <table-filter match-catalog="goodsmanger" match-name="check"/>
+  <table-filter match-catalog="goodsmanger" match-name="customer"/>
+  <table-filter match-catalog="goodsmanger" match-name="deliver"/>
+  <table-filter match-catalog="goodsmanger" match-name="department"/>
+  <table-filter match-catalog="goodsmanger" match-name="goods"/>
+  <table-filter match-catalog="goodsmanger" match-name="goodscheck"/>
+  <table-filter match-catalog="goodsmanger" match-name="goodsdeliver"/>
+  <table-filter match-catalog="goodsmanger" match-name="goodsstockin"/>
+  <table-filter match-catalog="goodsmanger" match-name="goodsstockout"/>
+  <table-filter match-catalog="goodsmanger" match-name="resources"/>
+  <table-filter match-catalog="goodsmanger" match-name="shelf"/>
+  <table-filter match-catalog="goodsmanger" match-name="stockin"/>
+  <table-filter match-catalog="goodsmanger" match-name="stockout"/>
+  <table-filter match-catalog="goodsmanger" match-name="users"/>
+  <table-filter match-catalog="goodsmanger" match-name="vendor"/>
+</hibernate-reverse-engineering>
